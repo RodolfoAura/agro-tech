@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.model {
+  display: none !important;
+  visibility: hidden;
+}
+
+.barra-lateral {
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #d45e15;
+  transition: all 0.5s ease;
+}
+
+.barra-lateral.active {
+  width: 60px;
+}
+
+.barra-lateral .logo-detalhes {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.barra-lateral .logo-detalhes i {
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 60px;
+  text-align: center
+}
+
+.barra-lateral .logo-detalhes .logo_name {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.barra-lateral .nav-links {
+  margin-top: 10px;
+}
+
+.barra-lateral .nav-links li {
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+
+.barra-lateral .nav-links li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.barra-lateral .nav-links li a.active {
+  background: #ff6a00;
+}
+
+.barra-lateral .nav-links li a:hover {
+  background: #d78b51;
+}
+
+.barra-lateral .nav-links li i {
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+
+.barra-lateral .nav-links li a .links_name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.barra-lateral .nav-links .log_out {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+.barra-lateral.active~.home-section {
+  width: calc(100% - 60px);
+  left: 60px;
+}
+
+.home-section nav {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: #565555;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.barra-lateral.active~.home-section nav {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+.home-section nav .barra-lateral-button {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+nav .barra-lateral-button i {
+  font-size: 35px;
+  margin-right: 10px;
+  color: white;
+}
+
+.home-section nav .search-box {
+  position: relative;
+  height: 50px;
+  max-width: 550px;
+  width: 100%;
+  margin: 0 20px;
+}
+
+nav .search-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+}
+
+nav .search-box .bx-search {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #ff8b26;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.4 ease;
+}
+
+.home-section nav .profile-detalhes {
+  display: flex;
+  align-items: center;
+  background: #979797;
+  border: 2px solid #f1760a;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+  color: white;
+}
+
+nav .profile-detalhes .admin_name {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  margin: 0 10px;
+}
+
+
+
+.home-section .Tela {
+  position: relative;
+  padding-top: 104px;
+
+
+}
+
+.Tela .overview-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+
+.overview-boxes .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% / 4 - 15px);
+  height: 12.5vh;
+  background: #818080;
+  color: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.overview-boxes .box-dados {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Tela .box .number {
+  display: inline-block;
+  font-size: 35px;
+  margin-top: -6px;
+  font-weight: 500;
+}
+
+.Tela .box .indicator {
+  display: flex;
+  align-items: center;
+}
+
+.Tela .box .indicator i {
+  height: 20px;
+  width: 20px;
+  background: #8FDACB;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.box .indicator i.down {
+  background: #e87d88;
+}
+
+.Tela .box .indicator .text {
+  font-size: 12px;
+}
+
+.Tela .box .cart {
+  display: inline-block;
+  font-size: 32px;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  line-height: 50px;
+  text-align: center;
+  color: #66b0ff;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+
+
+
+.Tela .box .cart.two {
+  color: #2BD47D;
+  background: #C0F2D8;
+}
+
+.Tela .box .cart.three {
+  color: #ffc233;
+  background: #ffe8b3;
+}
+
+.Tela .box .cart.four {
+  color: #e05260;
+  background: #f7d4d7;
+}
+
+.Tela .total-order {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Tela .Content-boxes {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  /* padding: 0 20px; */
+}
+
+.Tela .Content-boxes .recent-Content {
+  width: 75%;
+  background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #818080;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.Tela .Content-boxes .Content-detalhes {
+  background-color: #818080;
+  color: #fff;
+}
+
+td{
+  align-items: center ; 
+  justify-content: center                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              x;
+}
+
+
+.Content-boxes .box .titulo {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.Content-boxes .box .button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Content-boxes .box .button a {
+  color: #fff;
+  background: #ff6a00;
+  padding: 4px 12px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Content-boxes .box .button a:hover {
+  background: #ffffff;
+  color: #ff6a00;
+}
+
+.Tela .Content-boxes .top-Content {
+  width: 30%;
+  background: #818080;
+  padding: 20px 30px;
+  margin: 0 20px 0 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  max-height: 55vh;
+  position:sticky;
+  top:10%
+}
+
+.Content-boxes .top-Content li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.Content-boxes .top-Content li a img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 10px;
+  background: #333;
+}
+
+.Content-boxes .top-Content li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.Content-boxes .top-Content li .estado,
+.valor {
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+}
+
+
+
+.Tela .Content-boxes .recent-Content2 {
+  width: 75%;
+  background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #818080;
+  display: flex;
+  flex-direction: column;
+}
+
+table{
+  text-align: center;
+  width: 100%;
+}
+
+.home-section {
+  position: relative;
+  background: #5e5e5e;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+
+.adicionar{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  height: 4vh;
+  width: 8vw;
+  background-color: #d45e15;
+  color:#fff;
+  border-radius: 100px;
+}
+
+.Del{
+  width: 2vw;
+  height: 7vh;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.Edit{
+  width: 2vw;
+  font-size: 25px;
+  cursor: pointer;
+}
+.putmodal{
+  position: absolute;
+  height: 65vh;
+  width: 45vw;
+  background-color:#979797;
+  left: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.putmodal>input{
+  width: 20vw;
+   margin: 1% ;
+  border: none;
+  background-color: #d1cfcf;
+ border-bottom:2px solid #d45e15 ; 
+ border-radius: 2%;
+ outline: none;
+}
+.putmodal>select{
+  width: 20vw;
+   margin: 1% ;
+  border: none;
+  background-color: #d1cfcf;
+ border-bottom:2px solid #d45e15 ; 
+ border-radius: 2%;
+ outline: none;
+
+}
+
+.escondido{
+ display: none !important;
+}
+
+.func{
+  visibility: hidden;
+  display: none;
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../style/funcionario.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="barra-lateral">
+    <div class="logo-detalhes">
+      <i class='bx bx-brightness'></i>
+      <span class="logo_name">AgroTech</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#home" id="h" class="link active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#frota" id="f" class="link ">
+          <i class='bx bx-list-ul'></i>
+          <span class="links_name">Frota</span>
+        </a>
+      </li>
+      <li>
+        <a href="#dados" id="d" class="link">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="links_name">Operações</span>
+        </a>
+      </li>
+      <li>
+        <a href="#motorista" id="mo" class="link">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Motoristas</span>
+        </a>
+      </li>
+      <li>
+        <a href="#manutencao" id="ma" class="link">
+          <i class='bx bx-wrench'></i>
+          <span class="links_name">Manutenção</span>
+        </a>
+      </li>
+      <li class="log_out">
+        <a href="../pages/Login.html">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Sair</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="barra-lateral-button">
+        <i class='bx bx-menu barra-lateralBtn'></i>
+
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Pesquisa...">
+        <i class='bx bx-search'></i>
+      </div>
+      <div class="profile-detalhes">
+        <span class="admin_name"></span>
+      </div>
+    </nav>
+
+    <div class="Tela" id="home">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="direita">
+            <div class="box-dados">Frota</div>
+            <div class="number veiculos">0</div>
+          </div>
+          <i class='bx bx-bus cart'></i>
+        </div>
+        <div class="box">
+          <div class="direita">
+            <div class="box-dados">Motoristas</div>
+            <div class="number motoristas">0</div>
+          </div>
+          <i class='bx bx-user cart three'></i>
+        </div>
+        <div class="box">
+          <div class="direita">
+            <div class="box-dados">Frota Disponível</div>
+            <div class="number frota-disponivel">0</div>
+          </div>
+          <i class='bx bx-bus cart two '></i>
+        </div>
+        <div class="box">
+          <div class="direita">
+            <div class="box-dados">Em manutenção</div>
+            <div class="number frotaManutencao">0</div>
+          </div>
+          <i class='bx  bx-bus cart four'></i>
+        </div>
+      </div>
+
+      <div class="Content-boxes">
+        <div class="recent-Content box">
+          <div class="titulo">Alocação</div>
+          <table class="Content-detalhes">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Placa</th>
+                <th>Motorista</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="alocacaoVeiculo model">
+                <td id="modelo"></td>
+                <td id="placa"></td>
+                <td id="motorista">-</td>
+                <td id="situacao"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="top-Content box">
+          <div class="titulo">Veiculos</div>
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="Tela model" id="frota">
+      <div class="putmodal escondido">
+
+        <input id="modeloput" placeholder="Modelo" type="text">
+        <input id="placaput" placeholder="Placa" type="text">
+        <input id="marcaput " placeholder="Marca" type="text">
+        <input id="tipoput" placeholder="Tipo" type="text">
+        <input id="idput" hidden type="text">
+
+        <button onclick="alterarVeiculo()">Atualizar</button>
+
+      </div>
+      <div class="Content-boxes">
+        <div class="recent-Content2 box">
+          <div class="titulo">Frota</div>
+          <div class="Content-detalhes">
+
+            <table class="table-frota">
+              <thead>
+                <tr>
+                  <th>Modelo</th>
+                  <th>Marca</th>
+                  <th>Placa</th>
+                  <th>Tipo</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="itensFrota model">
+                  <td class="modeloCar"></td>
+                  <td class="marcaCar"></td>
+                  <td class="placaCar"></td>
+                  <td class="TipoCar"></td>
+                  <td class="statusCar"></td>
+                  <td class="Edit" onclick="AtivaModal(this.parentNode.id)"><i class='bx bx-edit-alt'></i></td>
+                  <td class="Del" onclick="Deletar(this.parentNode.id)"><i class='bx bx-trash'></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="top-Content box">
+          <div class="titulo">Tipo</div>
+          <canvas id="myChart2"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="Tela model" id="dados">
+      <div class="Content-boxes">
+        <div class="recent-Content2 box">
+          <div class="titulo">Operações</div>
+          <div class="Content-detalhes">
+            <table class="table-Ops">
+              <thead>
+                <tr>
+                  <th>Veiculo</th>
+                  <th>motorista</th>
+                  <th>Descrição</th>
+                  <th>data Saida</th>
+                  <th>data entrada</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="itensDisponibilidade model">
+                  <td class="Opsveiculo"></td>
+                  <td class="Opsmotorista"></td>
+                  <td class="OpsDesc"></td>
+                  <td class="OpsSai"></td>
+                  <td class="Opsent"></td>
+                  <td class="Edit"><i class='bx bx-edit-alt'></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Tela model" id="motorista">
+      <div class="putmodal escondido">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
+      </div>
+      <div class="Content-boxes">
+        <div class="recent-Content2 box">
+          <div class="titulo">Motorista</div>
+          <div class="Content-detalhes">
+            <table class="table-Motorista">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>CPF</th>
+                  <th>CNH</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="itensMotorista model">
+                  <td class="motoNome"></td>
+                  <td class="motoCpf"></td>
+                  <td class="motoCnh"></td>
+                  <td class="motoStatus"></td>
+                  <td class="Del"><i class='bx bx-trash'></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="Tela model" id="manutencao">
+      <div class="putmodal">
+        <select class="selecao">
+          <option id="valida model" value=""></option>
+        </select>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
+      </div>
+      <div class="Content-boxes">
+        <div class="recent-Content2 box">
+          <div class="titulo">Manutencao</div>
+          <div class="Content-detalhes">
+            <table class="table-Manutencao">
+              <thead>
+                <tr>
+                  <th>Veiculo</th>
+                  <th>Descrição</th>
+                  <th>Entrada</th>
+                  <th>Saida</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="itens model">
+                  <td class="Manucar"></td>
+                  <td class="ManuDes"></td>
+                  <td class="ManuEnt"></td>
+                  <td class="ManuSai"></td>
+                  <td class="ManuVal"></td>
+                  <td class="Edit"><i class='bx bx-edit-alt'></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="top-Content box">
+          <div class="titulo">Gastos</div>
+          <canvas id="myChart3"></canvas>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/inicio.js"></script>
+
+</body>
+
+</html>
